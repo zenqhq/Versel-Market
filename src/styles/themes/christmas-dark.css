@@ -1,0 +1,120 @@
+
+/* --- Christmas Theme (Dark) --- */
+.theme-christmas-dark {
+  --background: 120 15% 10%; /* Very Dark Green */
+  --foreground: 0 0% 95%; /* Light Gray / Near White */
+  --card: 120 15% 15%; /* Slightly Lighter Dark Green */
+  --card-foreground: 0 0% 95%;
+  --popover: 120 15% 15%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 0 85% 60%; /* Brighter Red */
+  --primary-foreground: 0 0% 10%; /* Dark for contrast on bright red */
+  --secondary: 40 80% 70%; /* Brighter Gold/Yellow */
+  --secondary-foreground: 40 80% 95%; /* Very Light Gold for text */
+  --muted: 120 10% 20%; /* Dark Muted Green */
+  --muted-foreground: 120 20% 60%; /* Lighter Muted Green */
+  --accent: 120 50% 30%; /* Darker Green Accent */
+  --accent-foreground: 120 50% 85%; /* Lighter Green Text */
+  --destructive: 0 75% 60%; /* Brighter Destructive Red for dark theme */
+  --destructive-foreground: 0 0% 98%;
+  --border: 120 20% 25%; /* Dark Greenish Border */
+  --input: 120 15% 20%; /* Dark Green Input */
+  --ring: 0 85% 70%; /* Brighter Red Ring */
+  --chart-1: 0 80% 65%; /* Bright Red Chart */
+  --chart-2: 120 60% 55%; /* Brighter Green Chart */
+  --chart-3: 40 75% 60%; /* Brighter Gold Chart */
+  --chart-4: 0 60% 60%; /* Medium Red Chart */
+  --chart-5: 120 50% 60%; /* Medium Green Chart */
+  --radius: 0.5rem;
+  --sidebar-background: 120 15% 12%; /* Even Darker Green Sidebar */
+  --sidebar-foreground: 0 0% 90%; /* Slightly off-white */
+  --sidebar-primary: 0 85% 60%; /* Bright Red */
+  --sidebar-primary-foreground: 0 0% 10%; /* Dark */
+  --sidebar-accent: 120 50% 30%; /* Darker Green Accent */
+  --sidebar-accent-foreground: 120 50% 85%; /* Lighter Green Text */
+  --sidebar-border: 120 20% 25%;
+  --sidebar-ring: 0 85% 70%;
+}
+
+/* --- Christmas Dark Theme Specific Styles & Animations --- */
+.theme-christmas-dark body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999; /* High z-index */
+}
+
+/* Dark Theme Snowfall */
+.theme-christmas-dark body::before {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(220, 220, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 50% 30%, rgba(230, 230, 255, 0.6) 2px, transparent 2px),
+    radial-gradient(circle at 80% 50%, rgba(210, 210, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 25% 70%, rgba(240, 240, 255, 0.5) 2px, transparent 2px),
+    radial-gradient(circle at 70% 90%, rgba(220, 220, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 35% 5%, rgba(230, 230, 255, 0.6) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 65% 45%, rgba(210, 210, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 90% 75%, rgba(240, 240, 255, 0.6) 2px, transparent 2px);
+  background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px, 180px 180px, 220px 220px, 170px 170px, 280px 280px;
+  background-repeat: repeat;
+  animation: snowfall 25s linear infinite;
+}
+
+/* Garland effect for header */
+.theme-christmas-dark header {
+    position: relative;
+    overflow: visible;
+}
+.theme-christmas-dark header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background-image:
+        radial-gradient(circle at 10px -5px, transparent 10px, hsl(var(--foreground)) 10px, hsl(var(--foreground)) 12px, transparent 12px),
+        radial-gradient(circle at 25px 0px, hsl(var(--primary)) 3px, transparent 3px),
+        radial-gradient(circle at 35px 2px, hsl(var(--secondary)) 2px, transparent 2px);
+    background-size: 40px 15px;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Pulse animation on Premium star button */
+.theme-christmas-dark .premium-button-nav {
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
+
+/* Table hover effect */
+.theme-christmas-dark table tbody tr:hover {
+    background-color: hsla(var(--accent) / 0.4) !important;
+}
+
+/* Border accents */
+.theme-christmas-dark .border {
+    border-color: hsla(var(--border) / 0.7);
+}
+.theme-christmas-dark .border-b {
+    border-bottom-color: hsla(var(--border) / 0.7);
+}
+.theme-christmas-dark .border-r {
+    border-right-color: hsla(var(--border) / 0.7);
+}
+
+/* Wiggle animation for search icon */
+.theme-christmas-dark .relative .lucide-search {
+    animation: wiggle 1.5s ease-in-out infinite alternate;
+}
+
+/* Card shadows */
+.theme-christmas-dark .shadow-lg {
+   box-shadow: 0 4px 8px hsla(var(--primary) / 0.2), 0 2px 4px hsla(0, 0%, 0%, 0.4);
+}

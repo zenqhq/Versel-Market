@@ -1,0 +1,130 @@
+
+/* --- Halloween Theme --- */
+.theme-halloween {
+  --background: 0 0% 8%; /* Very Dark Gray / Near Black */
+  --foreground: 0 0% 95%; /* Light Gray / Near White */
+  --card: 0 0% 12%; /* Slightly Lighter Dark Gray */
+  --card-foreground: 0 0% 95%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 25 95% 50%; /* Bright Orange */
+  --primary-foreground: 0 0% 10%; /* Dark Gray/Black for contrast on Orange */
+  --secondary: 0 0% 20%; /* Medium Dark Gray */
+  --secondary-foreground: 0 0% 85%; /* Light Gray */
+  --muted: 0 0% 15%; /* Dark Gray Muted */
+  --muted-foreground: 0 0% 60%; /* Medium Gray */
+  --accent: 25 80% 30%; /* Darker Orange Accent */
+  --accent-foreground: 25 95% 80%; /* Lighter Orange Text */
+  --destructive: 0 80% 55%; /* Slightly brighter Red for dark theme */
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 25%; /* Dark Gray Border */
+  --input: 0 0% 20%; /* Medium Dark Gray Input */
+  --ring: 25 95% 60%; /* Brighter Orange Ring */
+  --chart-1: 25 80% 60%; /* Orange */
+  --chart-2: 120 50% 50%; /* Spooky Green */
+  --chart-3: 270 60% 60%; /* Purple */
+  --chart-4: 0 0% 70%; /* Gray */
+  --chart-5: 25 70% 40%; /* Darker Orange */
+  --radius: 0.5rem;
+  --sidebar-background: 0 0% 10%; /* Slightly lighter dark gray for sidebar */
+  --sidebar-foreground: 0 0% 90%; /* Slightly off-white */
+  --sidebar-primary: 25 95% 50%; /* Bright Orange */
+  --sidebar-primary-foreground: 0 0% 10%; /* Dark Gray/Black */
+  --sidebar-accent: 25 80% 30%; /* Darker Orange Accent */
+  --sidebar-accent-foreground: 25 95% 80%; /* Lighter Orange Text */
+  --sidebar-border: 0 0% 25%;
+  --sidebar-ring: 25 95% 60%;
+}
+
+/* --- Halloween Theme Specific Styles & Animations --- */
+.theme-halloween body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* Behind content */
+  background:
+    /* Subtle cobweb pattern */
+    radial-gradient(circle at 20% 80%, hsla(0, 0%, 50%, 0.1) 0.5px, transparent 1px),
+    radial-gradient(circle at 80% 20%, hsla(0, 0%, 50%, 0.08) 0.5px, transparent 1px),
+    /* Tiny bats */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 3 Q 2 0, 5 2 T 10 3 L 5 6 Z' fill='rgba(255, 165, 0, 0.1)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 3 Q 2 0, 5 2 T 10 3 L 5 6 Z' fill='rgba(255, 165, 0, 0.07)'/%3E%3C/svg%3E"),
+    /* Subtle ghost */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 90 Q 50 70, 70 90 T 90 70 Q 95 40, 70 20 Q 50 0, 30 20 Q 5 40, 10 70 T 30 90 Z' fill='rgba(200, 200, 200, 0.05)'/%3E%3Ccircle cx='40' cy='40' r='5' fill='rgba(0,0,0,0.1)'/%3E%3Ccircle cx='60' cy='40' r='5' fill='rgba(0,0,0,0.1)'/%3E%3C/svg%3E");
+  background-size: 150px 150px, 200px 200px, 80px 80px, 120px 120px, 250px 250px;
+  background-repeat: repeat;
+  opacity: 0.5;
+  animation: spooky-float 30s linear infinite alternate;
+}
+
+/* Blood drip effect */
+.theme-halloween header {
+    position: relative;
+    overflow: visible;
+}
+.theme-halloween header::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Position below the header */
+    left: 0;
+    right: 0;
+    height: 20px; /* Drip height */
+    /* Complex background for dripping effect */
+    background-image:
+        /* Main drip shape (red) */
+        linear-gradient(to bottom, hsl(var(--destructive) / 0.8) 0%, hsl(var(--destructive) / 0.8) 50%, transparent 50%),
+        /* Smaller secondary drips */
+        radial-gradient(ellipse at 30% 100%, hsl(var(--destructive) / 0.7) 5px, transparent 5px),
+        radial-gradient(ellipse at 70% 100%, hsl(var(--destructive) / 0.7) 4px, transparent 4px),
+        radial-gradient(ellipse at 50% 100%, hsl(var(--destructive) / 0.7) 6px, transparent 6px);
+    background-size: 10px 100%, 50px 100%, 60px 100%, 40px 100%; /* Varied sizes for drips */
+    background-position: 0 0, 10px 0, 25px 0, 40px 0;
+    background-repeat: repeat-x;
+    animation: drip 15s linear infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* Pulsing effect for primary buttons */
+.theme-halloween .button[variant="default"],
+.theme-halloween button[variant="default"] {
+  animation: pulse-orange 2.5s infinite ease-in-out;
+}
+
+/* Spooky hover effect for table rows */
+.theme-halloween table tbody tr:hover {
+    background-color: hsla(var(--accent) / 0.3) !important;
+    transform: translate(-2px, -1px); /* Slight spooky shift */
+    transition: transform 0.1s ease-out, background-color 0.15s linear;
+}
+
+/* Halloween border accents */
+.theme-halloween .border {
+    border-color: hsla(var(--border) / 0.8);
+}
+.theme-halloween .border-b {
+    border-bottom-color: hsla(var(--border) / 0.8);
+}
+.theme-halloween .border-r {
+    border-right-color: hsla(var(--border) / 0.8);
+}
+
+/* Halloween Card Shadow */
+.theme-halloween .shadow-lg {
+  box-shadow: 0 4px 8px hsla(var(--primary) / 0.2), 0 2px 4px hsla(0, 0%, 0%, 0.4);
+}
+
+/* Spooky animation for Search Icon */
+.theme-halloween .relative .lucide-search {
+   animation: spooky-search 2s ease-in-out infinite;
+}
+
+/* Subtle text shadow for headings */
+.theme-halloween h1, .theme-halloween h2, .theme-halloween h3, .theme-halloween .text-2xl {
+    text-shadow: 1px 1px 2px hsla(var(--primary) / 0.15);
+}

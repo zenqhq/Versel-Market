@@ -1,0 +1,38 @@
+
+/* --- Blue Theme --- */
+.theme-blue {
+  --background: 210 40% 98%; /* Very Light Blue */
+  --foreground: 210 40% 10%; /* Dark Blue */
+  --card: 210 40% 98%;
+  --card-foreground: 210 40% 10%;
+  --popover: 210 40% 98%;
+  --popover-foreground: 210 40% 10%;
+  --primary: 210 90% 50%; /* Bright Blue */
+  --primary-foreground: 210 90% 98%; /* Very Light Blue/Near White */
+  --secondary: 210 30% 94%; /* Light Grayish Blue */
+  --secondary-foreground: 210 30% 20%; /* Dark Grayish Blue */
+  --muted: 210 30% 94%;
+  --muted-foreground: 210 30% 50%; /* Medium Grayish Blue */
+  --accent: 210 90% 90%; /* Light Blue Accent */
+  --accent-foreground: 210 90% 20%; /* Dark Blue Accent Text */
+  --destructive: 0 70% 50%; /* Keep destructive standard red */
+  --destructive-foreground: 0 0% 98%;
+  --border: 210 30% 90%; /* Light Blue Border */
+  --input: 210 30% 90%;
+  --ring: 210 90% 60%; /* Slightly brighter blue for rings */
+  --chart-1: 210 76% 61%;
+  --chart-2: 210 58% 39%;
+  --chart-3: 210 37% 24%;
+  --chart-4: 210 74% 66%;
+  --chart-5: 210 87% 67%;
+  --radius: 0.5rem;
+  --sidebar-background: 210 40% 96%; /* Slightly darker light blue for sidebar */
+  --sidebar-foreground: 210 40% 15%; /* Darker Blue */
+  --sidebar-primary: 210 90% 50%; /* Bright Blue */
+  --sidebar-primary-foreground: 210 90% 98%; /* Very Light Blue/Near White */
+  --sidebar-accent: 210 90% 90%; /* Light Blue Accent */
+  --sidebar-accent-foreground: 210 90% 20%; /* Dark Blue Accent Text */
+  --sidebar-border: 210 30% 90%;
+  --sidebar-ring: 210 90% 60%;
+}
+
